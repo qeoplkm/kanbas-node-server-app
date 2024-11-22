@@ -11,6 +11,7 @@ import AssignmentRoutes from './Kanbas/Assignments/routes.js'
 
 const app = express()
 const PORT = process.env.PORT || 4000
+const HOST = '0.0.0.0'
 
 app.use(
   cors({
@@ -44,6 +45,6 @@ AssignmentRoutes(app)
 Hello(app)
 Lab5(app)
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
+app.listen(PORT, HOST, () => {
+  console.log(`Server running on http://${HOST}:${PORT}`)
 })
