@@ -1,2 +1,7 @@
 node_modules
 .env.local
+
+NODE_ENV=production
+NETLIFY_URL=https://peppy-moonbeam-da9355.netlify.app/
+NODE_SERVER_DOMAIN=kanbas-node-server-app-k3pu.onrender.com
+SESSION_SECRET=super secret session phrase

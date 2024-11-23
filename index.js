@@ -12,31 +12,27 @@ import AssignmentRoutes from './Kanbas/Assignments/routes.js';
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// Exit if PORT is not set
-if (!PORT) {
-  console.error("PORT environment variable is not set.");
-  process.exit(1);
-}
-
 app.use(
   cors({
     credentials: true,
     origin: process.env.NETLIFY_URL || "http://localhost:3000",
   })
-);
+ );
 
-const sessionOptions = {
+ const sessionOptions = {
   secret: process.env.SESSION_SECRET || "kanbas",
   resave: false,
   saveUninitialized: false,
-  proxy: process.env.NODE_ENV !== "development",
-  cookie: process.env.NODE_ENV !== "development" ? {
+};
+
+if (process.env.NODE_ENV !== "development") {
+  sessionOptions.proxy = true;
+  sessionOptions.cookie = {
     sameSite: "none",
     secure: true,
     domain: process.env.NODE_SERVER_DOMAIN,
-  } : {},
-};
-
+  };
+}
 app.use(session(sessionOptions));
 app.use(express.json());
 
