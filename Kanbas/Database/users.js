@@ -110,4 +110,18 @@ export default [
   "section": "S101",
   "lastActivity": "2020-11-11",
   "totalActivity": "21:32:43"
+},
+{
+  "_id": "121",
+  "username": "jeremy",
+  "password": "123456",
+  "firstName": "jeremy",
+  "lastName": "yao",
+  "email": "jeremy@yao.com",
+  "dob": "1970-05-29T00:00:00.000Z",
+  "role": "ADMIN",
+  "loginId": "001234561S",
+  "section": "S101",
+  "lastActivity": "2020-10-01",
+  "totalActivity": "10:21:32"
 }];
