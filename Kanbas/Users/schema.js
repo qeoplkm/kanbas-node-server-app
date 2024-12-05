@@ -1,12 +1,5 @@
 import mongoose from "mongoose";
-
-const userSchema = new mongoose.Schema(
-  {
-    _id: { 
-      type: String,
-      required: true,
-      default: () => new Date().getTime().toString() 
-    },
+const userSchema = new mongoose.Schema({
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     firstName: String,
@@ -14,16 +7,15 @@ const userSchema = new mongoose.Schema(
     lastName: String,
     dob: Date,
     role: {
-      type: String,
-      enum: ["STUDENT", "FACULTY", "ADMIN", "USER"],
-      default: "USER",
+        type: String,
+        enum: ["STUDENT", "FACULTY", "ADMIN", "USER"],
+        default: "USER",
     },
     loginId: String,
     section: String,
     lastActivity: Date,
     totalActivity: String,
-  },
-  { collection: "users" }
+},
+    { collection: "users" }
 );
-
 export default userSchema;
