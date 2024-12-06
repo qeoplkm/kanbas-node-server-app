@@ -7,7 +7,7 @@ export default function EnrollmentsRoutes(app) {
     });
     app.delete("/:userId/:courseId/unenroll", (req, res) => {
         const { userId, courseId } = req.params;
-        const status = enrollmentDao.unenrollUserFromCourse(userId, courseId);
+        const status = enrollmentDao.unenrollUserInCourse(userId, courseId);
         res.send(status);
     });
 }

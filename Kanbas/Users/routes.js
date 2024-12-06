@@ -140,4 +140,10 @@ export default function UserRoutes(app) {
     };
     app.delete("/api/users/:uid/courses/:cid", unenrollUserFromCourse);
 
+    // const findEnrollmentsForUser = (req, res) => {
+    //     const { userId } = req.params;
+    //     const enrollments = enrollmentsDao.findEnrollmentsForUser(userId);
+    //     res.json(enrollments);
+    // };
+    // app.get("/api/users/:userId/enrollments", findEnrollmentsForUser);
 }

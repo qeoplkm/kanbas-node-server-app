@@ -35,7 +35,6 @@ export default function CourseRoutes(app) {
         res.json(assignments);
     });
 
-
     app.post("/api/courses/:courseId/modules", async (req, res) => {
         const { courseId } = req.params;
         const module = {
